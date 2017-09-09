@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
+       default-autowire="byType">
+
+    <bean id="age1" class="java.lang.Integer">
+        <constructor-arg type="int" value="10"/>
+    </bean>
+    <bean id="name1" class="java.lang.String">
+        <constructor-arg type="java.lang.String" value="yanglikun"/>
+    </bean>
+
+    <bean id="person1" class="com.example.demo.spring.Person">
+        <property name="name">
+            <ref bean="name1"></ref>
+        </property>
+    </bean>
+
+</beans>
